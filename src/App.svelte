@@ -8,8 +8,7 @@
   }
 
   function deletePassword(i) {
-    console.log(i);
-    passwords = [...passwords.slice(0, i), ...passwords.slice(i + 1)];
+    passwords = passwords.filter((_, inedx) => inedx != i);
   }
 </script>
 
