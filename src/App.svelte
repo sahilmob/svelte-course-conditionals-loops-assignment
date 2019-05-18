@@ -6,6 +6,11 @@
     passwords = [...passwords, password];
     password = "";
   }
+
+  function deletePassword(i) {
+    console.log(i);
+    passwords = [...passwords.slice(0, i), ...passwords.slice(i + 1)];
+  }
 </script>
 
 <h1>Assignment</h1>
@@ -25,7 +30,7 @@
   <p>Passwrds:</p>
   <ul>
     {#each passwords as password, i}
-      <li>{password}</li>
+      <li on:click={() => deletePassword(i)}>{password}</li>
     {/each}
   </ul>
 {/if}
