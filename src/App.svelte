@@ -1,18 +1,25 @@
 <script>
   let password = "";
+  let passwords = [];
+
+  function savePassword() {
+    passwords = [...passwords, password];
+    password = "";
+  }
 </script>
 
 <h1>Assignment</h1>
 
 <input type="password" bind:value={password} />
 
-{#if password.length < 5}
+{#if password.length < 5 && password.length > 0}
   <p>Too Short</p>
 {:else if password.length > 10}
   <p>Too Long</p>
 {:else}
   <p>{password}</p>
 {/if}
+<button on:click={savePassword}>Save password</button>
 
 <p>Solve these tasks.</p>
 
