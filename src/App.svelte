@@ -24,7 +24,11 @@
 {:else}
   <p>{password}</p>
 {/if}
-<button on:click={savePassword}>Save password</button>
+<button
+  disabled={password.length < 5 || password.length > 10}
+  on:click={savePassword}>
+  Save password
+</button>
 
 {#if passwords.length > 0}
   <p>Passwrds:</p>
