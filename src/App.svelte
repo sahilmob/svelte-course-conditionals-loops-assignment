@@ -32,7 +32,7 @@
 {#if passwords.length > 0}
   <p>Passwrds:</p>
   <ul>
-    {#each passwords as password, i}
+    {#each passwords as password, i (password)}
       <li on:click={() => deletePassword(i)}>{password}</li>
     {/each}
   </ul>
