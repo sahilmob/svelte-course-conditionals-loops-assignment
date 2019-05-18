@@ -21,6 +21,15 @@
 {/if}
 <button on:click={savePassword}>Save password</button>
 
+{#if passwords.length > 0}
+  <p>Passwrds:</p>
+  <ul>
+    {#each passwords as password, i}
+      <li>{password}</li>
+    {/each}
+  </ul>
+{/if}
+
 <p>Solve these tasks.</p>
 
 <ol>
