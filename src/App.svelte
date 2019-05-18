@@ -32,6 +32,7 @@
 {#if passwords.length > 0}
   <p>Passwrds:</p>
   <ul>
+    <!-- The assumption here is that every password is unique -->
     {#each passwords as password, i (password)}
       <li on:click={() => deletePassword(i)}>{password}</li>
     {/each}
